@@ -60,14 +60,7 @@ int main(void)
 	
 	randomize_array(unsorted1, 5);
 	randomize_array(unsorted2, 5);
-	//randomize_array(unsorted3, 5);
-	/*
-	int i;
-	for(i = 0; i < 5; i++)
-	{
-		printf("%d ", unsorted2[i]);
-	}
-	*/
+
 	//sorts the unsorted arrays
 	bubbleSort(unsorted1, 5);
 	bubbleSort(unsorted2, 5);
