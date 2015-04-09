@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include "H1SortsV1.h"
+#include "Sorts.h"
 
 
 int main(int argc, char *argv[])
@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 	{
 		newar[i] = strtol(argv[i + 2], NULL, 10);
 	}
-	
+
 	//calls the function and gives it the parameters
     switch(func[0])
     {

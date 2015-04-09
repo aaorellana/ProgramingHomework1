@@ -1,9 +1,4 @@
-void insertionSort(int *array, int size);
-
-void bubbleSort(int *array, int size);
-
-void selectionSort(int *array, int size);
-
+#include "Sorts.h"
 
 void insertionSort(int *array, int size)
 {
@@ -15,7 +10,7 @@ void insertionSort(int *array, int size)
 	{
 		j = i;
 		while((j > 0) && (array[j - 1] > array[j]))
-		{
+		{	//swaps the elements
 			temp = array[j-1];
 			array[j - 1] = array[j];
 			array[j] = temp;
@@ -35,23 +30,19 @@ void bubbleSort(int *array, int size)
 	
 	while(swapped != 0)
 	{
-		//printf("%d", i);
 		swapped = 0;
 		for(i = 1; i < size; i++)
 		{
-			//printf("%d", i);
 			if(array[i - 1] > array[i])
-			{
+			{	//swaps the elements
 				temp = array[i];
 				array[i] = array[i - 1];
 				array[i - 1] = temp;
 				swapped = 1;
 			}
 		}
-		
 	}
 	
-
 }
 
 void selectionSort(int *array, int size)
@@ -72,7 +63,7 @@ void selectionSort(int *array, int size)
 			}
 		}
 		if(min != j)
-		{
+		{	//swaps the elements
 			temp = array[min];
 			array[min] = array[j];
 			array[j] = temp;
