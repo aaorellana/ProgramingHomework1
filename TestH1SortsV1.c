@@ -15,11 +15,33 @@ int main(void)
 	int sorted1[5] = {11, 11, 20, 32, 47};
 	int unsorted3[5] = {24, 1, 36, 5, 2};
 	int sorted2[5] = {1, 2, 5, 24, 36};
+	int test_sorted1[5] = {1, 2, 3, 4, 5};
+	int test_unsorted2[5] = {1, 2, 3, 4, 5};
+	int sorted4[1] = {1};
+	int unsorted4[1] = {1};
+	int sorted5[5] = {0, 0, 0, 0, 0};
+	int unsorted5[5] = {0, 0, 0, 0, 0};
 	
 	//sorts the unsorted arrays
 	insertionSort(unsorted1, 5);
 	insertionSort(unsorted2, 5);
 	insertionSort(unsorted3, 5);
+	insertionSort(test_sorted1, 5);
+	insertionSort(unsorted4, 1);
+	insertionSort(unsorted5, 5);
+	
+	//tests that repeating element array wont get messed up
+	assert(sorted5[0] == unsorted5[0]);
+	assert(sorted5[2] == unsorted5[2]);
+	assert(sorted5[4] == unsorted5[4]);
+	
+	//test that the function does not mess up a one element array
+	assert(sorted4[0] == unsorted4[0]);
+	
+	//tests that it does not mess up a sorted array
+	assert(test_sorted1[0] == test_unsorted2[0]);
+	assert(test_sorted1[4] == test_unsorted2[4]);
+	assert(test_sorted1[2] == test_unsorted2[2]);
 	
 	//compares the same index of the sorted and unsorted array
 	//they all should equal since the unsorted should be sorted now
@@ -43,6 +65,22 @@ int main(void)
 	selectionSort(unsorted1, 5);
 	selectionSort(unsorted2, 5);
 	selectionSort(unsorted3, 5);
+	selectionSort(test_unsorted2, 5);
+	selectionSort(unsorted4, 1);
+	selectionSort(unsorted5, 5);
+	
+	//tests that repeating element array wont get messed up
+	assert(sorted5[0] == unsorted5[0]);
+	assert(sorted5[2] == unsorted5[2]);
+	assert(sorted5[4] == unsorted5[4]);
+	
+	//test that the function does not mess up a one element array
+	assert(sorted4[0] == unsorted4[0]);
+	
+	//tests that it does not mess up a sorted array
+	assert(test_sorted1[0] == test_unsorted2[0]);
+	assert(test_sorted1[4] == test_unsorted2[4]);
+	assert(test_sorted1[2] == test_unsorted2[2]);
 	
 	//compares the same index of the sorted and unsorted array
 	//they all should equal since the unsorted should be sorted now
@@ -65,6 +103,22 @@ int main(void)
 	bubbleSort(unsorted1, 5);
 	bubbleSort(unsorted2, 5);
 	bubbleSort(unsorted3, 5);
+	bubbleSort(test_unsorted2, 5);
+	bubbleSort(unsorted4, 1);
+	bubbleSort(unsorted5, 5);
+	
+	//tests that repeating element array wont get messed up
+	assert(sorted5[0] == unsorted5[0]);
+	assert(sorted5[2] == unsorted5[2]);
+	assert(sorted5[4] == unsorted5[4]);
+	
+	//test that the function does not mess up a one element array
+	assert(sorted4[0] == unsorted4[0]);
+	
+	//tests that it does not mess up a sorted array
+	assert(test_sorted1[0] == test_unsorted2[0]);
+	assert(test_sorted1[4] == test_unsorted2[4]);
+	assert(test_sorted1[2] == test_unsorted2[2]);
 	
 	//compares the same index of the sorted and unsorted array
 	//they all should equal since the unsorted should be sorted now
@@ -79,13 +133,13 @@ int main(void)
 	return 0;
 }
 
-
+//unsorts the array its given
 void randomize_array(int *array, int size)
 {
 	int i;
 	int num;
 	int temp;
-	srand(time(NULL));
+	srand(time(NULL)); //seeds the random value
 	for(i = 0; i < size; i++)
 	{
 		num = rand() % size;

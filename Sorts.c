@@ -9,6 +9,7 @@ void insertionSort(int *array, int size)
 	for(i = 1; i < size; i++)
 	{
 		j = i;
+		//inserts the value in the correct index and shifts the elements to the right
 		while((j > 0) && (array[j - 1] > array[j]))
 		{	//swaps the elements
 			temp = array[j-1];
@@ -28,6 +29,7 @@ void bubbleSort(int *array, int size)
 	int temp;
 	int swapped;
 	
+	//loops until no elements have been swapped
 	while(swapped != 0)
 	{
 		swapped = 0;
@@ -55,6 +57,7 @@ void selectionSort(int *array, int size)
 	for(j = 0; j < size - 1; j++)
 	{
 		min = j;
+		//looks for the smallest value
 		for(i = j + 1; i < size; i++)
 		{
 			if(array[i] < array[min])
